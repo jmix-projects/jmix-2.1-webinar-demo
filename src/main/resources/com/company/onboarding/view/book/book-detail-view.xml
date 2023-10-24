@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
-      title="msg://departmentDetailView.title"
+      title="msg://bookDetailView.title"
       focusComponent="form">
     <data>
-        <instance id="departmentDc"
-                  class="com.company.onboarding.entity.Department">
+        <instance id="bookDc"
+                  class="com.company.onboarding.entity.Book">
             <fetchPlan extends="_base">
-                <property name="hrManager" fetchPlan="_base"/>
+                <property name="genre" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
         </instance>
@@ -19,16 +19,11 @@
         <action id="closeAction" type="detail_close"/>
     </actions>
     <layout>
-        <formLayout id="form" dataContainer="departmentDc">
-            <textField id="nameField" property="name">
-                <prefix>
-                    <icon icon="ASTERISK"/>
-                </prefix>
-                <suffix>
-                    <button id="setNameBtn" text="Set name"/>
-                </suffix>
-            </textField>
-            <entityPicker id="hrManagerField" property="hrManager">
+        <formLayout id="form" dataContainer="bookDc">
+            <textField id="titleField" property="title"/>
+            <textField id="authorField" property="author"/>
+            <textField id="publisherField" property="publisher"/>
+            <entityPicker id="genreField" property="genre">
                 <actions>
                     <action id="entityLookup" type="entity_lookup"/>
                     <action id="entityClear" type="entity_clear"/>

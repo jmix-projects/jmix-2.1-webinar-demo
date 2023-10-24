@@ -8,7 +8,7 @@
             <fetchPlan extends="_base">
                 <property name="department" fetchPlan="_base"/>
             </fetchPlan>
-            <loader id="usersDl">
+            <loader id="usersDl" readOnly="true">
                 <query>
                     <![CDATA[select e from User e order by e.username]]>
                 </query>
@@ -40,6 +40,7 @@
                 <items>
                     <actionItem id="changePasswordItem" ref="usersDataGrid.changePassword"/>
                     <actionItem id="resetPasswordItem" ref="usersDataGrid.resetPassword"/>
+                    <actionItem id="showUserSubstitutionsItem" ref="usersDataGrid.showUserSubstitutions"/>
                 </items>
             </dropdownButton>
             <simplePagination id="pagination" dataLoader="usersDl"/>
@@ -47,7 +48,8 @@
         <dataGrid id="usersDataGrid"
                   width="100%"
                   minHeight="20em"
-                  dataContainer="usersDc">
+                  dataContainer="usersDc"
+                  columnReorderingAllowed="true">
             <actions>
                 <action id="create" type="list_create"/>
                 <action id="edit" type="list_edit"/>
@@ -55,17 +57,18 @@
                 <action id="showRoleAssignments" type="sec_showRoleAssignments"/>
                 <action id="changePassword" type="sec_changePassword"/>
                 <action id="resetPassword" type="sec_resetPassword"/>
+                <action id="showUserSubstitutions" type="sec_showUserSubstitutions"/>
             </actions>
-            <columns>
-                <column property="username"/>
-                <column property="firstName"/>
-                <column property="lastName"/>
-                <column property="email"/>
-                <column property="timeZoneId"/>
-                <column property="active"/>
-                <column property="onboardingStatus"/>
-                <column property="department"/>
-                <column property="joiningDate"/>
+            <columns resizable="true">
+                <column property="username" filterable="true" width="10em" resizable="false"/>
+                <column property="firstName" filterable="true" autoWidth="true" resizable="false"/>
+                <column property="lastName" filterable="true" autoWidth="true" resizable="false"/>
+                <column property="email" filterable="true" autoWidth="true" resizable="false"/>
+                <column property="timeZoneId" autoWidth="true"/>
+                <column property="active" filterable="true" autoWidth="true"/>
+                <column property="onboardingStatus" filterable="true" autoWidth="true"/>
+                <column property="department" filterable="true" autoWidth="true"/>
+                <column property="joiningDate" filterable="true" autoWidth="true"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

@@ -16,11 +16,11 @@
         </collection>
     </data>
     <layout>
-        <vbox>
-            <span id="totalStepsLabel"/>
-            <span id="completedStepsLabel"/>
-            <span id="overdueStepsLabel"/>
-        </vbox>
+        <hbox alignItems="CENTER" height="10em">
+            <span id="totalStepsLabel" text="Total" css="background: blue;"/>
+            <span id="completedStepsLabel" text="Completed" css="background: green;" alignSelf="END"/>
+            <span id="overdueStepsLabel" text="Overdue" css="background: red;"/>
+        </hbox>
         <dataGrid width="100%" dataContainer="userStepsDc" id="userStepsDataGrid" classNames="onboarding-steps">
             <columns>
                 <column property="step.name"/>

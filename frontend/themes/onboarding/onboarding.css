@@ -7,3 +7,10 @@
 vaadin-grid.onboarding-steps::part(overdue-step) {
     color: red;
 }
+
+.steps-list {
+    border: 1px solid var(--lumo-primary-color);
+    border-radius: var(--lumo-border-radius-l);
+    padding: 5px;
+    margin-bottom: 5px;
+}

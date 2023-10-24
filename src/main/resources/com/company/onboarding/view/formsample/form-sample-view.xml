@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://formSampleView.title">
+    <data>
+        <instance id="userDc" class="com.company.onboarding.entity.User">
+            <fetchPlan extends="_base"/>
+        </instance>
+    </data>
+    <layout>
+        <details summaryText="Labels on TOP" opened="true">
+            <formLayout dataContainer="userDc" width="100%">
+                <textField id="usernameField1" property="username" readOnly="true"/>
+                <textField id="firstNameField1" property="firstName"/>
+                <textField id="lastNameField1" property="lastName"/>
+                <textField id="emailField1" property="email"/>
+                <comboBox id="timeZoneField1" property="timeZoneId"/>
+                <checkbox id="activeField1" property="active"/>
+            </formLayout>
+        </details>
+        <details summaryText="Labels ASIDE" opened="true">
+            <formLayout dataContainer="userDc" width="100%" labelsPosition="ASIDE">
+                <formItem>
+                    <textField id="usernameField2" property="username" readOnly="true"/>
+                </formItem>
+                <formItem>
+                    <textField id="firstNameField2" property="firstName"/>
+                </formItem>
+                <formItem>
+                    <textField id="lastNameField2" property="lastName"/>
+                </formItem>
+                <formItem>
+                    <textField id="emailField2" property="email"/>
+                </formItem>
+                <formItem>
+                    <comboBox id="timeZoneField2" property="timeZoneId"/>
+                </formItem>
+                <formItem>
+                    <checkbox id="activeField2" property="active"/>
+                </formItem>
+            </formLayout>
+        </details>
+        <details summaryText="Labels ASIDE on some width" opened="true">
+            <formLayout dataContainer="userDc" width="100%" labelsPosition="ASIDE">
+                <responsiveSteps>
+                    <responsiveStep minWidth="0" columns="1" labelsPosition="TOP"/>
+                    <responsiveStep minWidth="40em" columns="1" labelsPosition="ASIDE"/>
+                    <responsiveStep minWidth="50em" columns="2" labelsPosition="TOP"/>
+                    <responsiveStep minWidth="65em" columns="2" labelsPosition="ASIDE"/>
+                </responsiveSteps>
+                <formItem>
+                    <textField id="usernameField3" property="username" readOnly="true"/>
+                </formItem>
+                <formItem>
+                    <textField id="firstNameField3" property="firstName"/>
+                </formItem>
+                <formItem>
+                    <textField id="lastNameField3" property="lastName"/>
+                </formItem>
+                <formItem>
+                    <textField id="emailField3" property="email"/>
+                </formItem>
+                <formItem>
+                    <comboBox id="timeZoneField3" property="timeZoneId"/>
+                </formItem>
+                <formItem>
+                    <checkbox id="activeField3" property="active"/>
+                </formItem>
+            </formLayout>
+        </details>
+
+    </layout>
+</view>

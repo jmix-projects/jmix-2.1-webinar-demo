@@ -9,7 +9,8 @@
             <fetchPlan extends="_base"/>
             <loader id="stepsDl">
                 <query>
-                    <![CDATA[select e from Step e]]>
+                    <![CDATA[select e from Step e
+                    order by e.sortValue asc]]>
                 </query>
             </loader>
         </collection>
@@ -31,26 +32,13 @@
             <properties include=".*"/>
         </genericFilter>
         <hbox id="buttonsPanel" classNames="buttons-panel">
-            <button id="createBtn" action="stepsDataGrid.create"/>
-            <button id="editBtn" action="stepsDataGrid.edit"/>
-            <button id="removeBtn" action="stepsDataGrid.remove"/>
+            <button id="createBtn" text="Create" themeNames="primary"/>
+            <button id="generateBtn" text="Generate"/>
             <simplePagination id="pagination" dataLoader="stepsDl"/>
         </hbox>
-        <dataGrid id="stepsDataGrid"
-                  width="100%"
-                  minHeight="20em"
-                  dataContainer="stepsDc">
-            <actions>
-                <action id="create" type="list_create"/>
-                <action id="edit" type="list_edit"/>
-                <action id="remove" type="list_remove"/>
-            </actions>
-            <columns>
-                <column property="name"/>
-                <column property="duration"/>
-                <column property="sortValue"/>
-            </columns>
-        </dataGrid>
+
+        <virtualList id="stepsVirtualList" itemsContainer="stepsDc"/>
+
         <hbox id="lookupActions" visible="false">
             <button id="selectBtn" action="selectAction"/>
             <button id="discardBtn" action="discardAction"/>

@@ -32,23 +32,25 @@
                        dataLoader="departmentsDl">
             <properties include=".*"/>
         </genericFilter>
-        <hbox id="buttonsPanel" classNames="buttons-panel">
+        <hbox classNames="buttons-panel" id="buttonsPanel">
             <button id="createBtn" action="departmentsDataGrid.create"/>
             <button id="editBtn" action="departmentsDataGrid.edit"/>
             <button id="removeBtn" action="departmentsDataGrid.remove"/>
-            <simplePagination id="pagination" dataLoader="departmentsDl"/>
+            <button id="generateFakeData" text="Generate fake data"/>
+            <simplePagination dataLoader="departmentsDl" id="pagination"/>
         </hbox>
-        <dataGrid id="departmentsDataGrid"
-                  width="100%"
-                  minHeight="20em"
-                  dataContainer="departmentsDc" columnReorderingAllowed="true">
+        <dataGrid id="departmentsDataGrid" width="100%" minHeight="20em"
+                  dataContainer="departmentsDc" columnReorderingAllowed="true"
+                  aggregatable="true">
             <actions>
                 <action id="create" type="list_create"/>
                 <action id="edit" type="list_edit"/>
                 <action id="remove" type="list_remove"/>
             </actions>
             <columns>
-                <column property="name" resizable="true"/>
+                <column property="name" resizable="true">
+                    <aggregation type="COUNT"/>
+                </column>
                 <column property="hrManager" resizable="true"/>
             </columns>
         </dataGrid>

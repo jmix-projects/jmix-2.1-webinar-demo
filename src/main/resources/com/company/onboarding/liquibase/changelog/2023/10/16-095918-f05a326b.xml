@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="onboarding">
+        <addColumn tableName="BOOK">
+            <column name="GENRE_ID" type="UUID"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="2" author="onboarding">
+        <createIndex indexName="IDX_BOOK_GENRE" tableName="BOOK">
+            <column name="GENRE_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="GENRE_ID" baseTableName="BOOK" constraintName="FK_BOOK_ON_GENRE"
+                                 referencedColumnNames="ID" referencedTableName="GENRE"/>
+    </changeSet>
+</databaseChangeLog>

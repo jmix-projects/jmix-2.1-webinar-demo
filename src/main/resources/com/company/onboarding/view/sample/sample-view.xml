@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://sampleView.title">
+    <facets>
+        <timer id="timer" delay="2000" repeating="true" autostart="true"/>
+    </facets>
+    <layout>
+        <button id="authBtn" text="Test auth"/>
+
+        <html content="msg://helloWorld"/>
+
+        <span id="timerOutput"/>
+    </layout>
+</view>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://genreListView.title"
+      focusComponent="genresDataGrid">
+    <data>
+        <collection id="genresDc"
+                    class="com.company.onboarding.entity.Genre">
+            <fetchPlan extends="_base"/>
+            <loader id="genresDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Genre e]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="genreDc"
+                  class="com.company.onboarding.entity.Genre">
+            <fetchPlan extends="_base"/>
+            <loader id="genreDl"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout padding="false">
+        <formLayout classNames="master-detail-layout" height="100%">
+            <vbox id="listLayout" height="100%">
+                <genericFilter id="genericFilter"
+                               dataLoader="genresDl">
+                    <properties include=".*"/>
+                </genericFilter>
+                <hbox id="buttonsPanel" alignItems="BASELINE" classNames="buttons-panel">
+                    <button id="createBtn" action="genresDataGrid.create"/>
+                    <button id="editBtn" action="genresDataGrid.edit"/>
+                    <button id="removeBtn" action="genresDataGrid.remove"/>
+                    <simplePagination id="pagination" dataLoader="genresDl"/>
+                </hbox>
+                <dataGrid id="genresDataGrid"
+                          width="100%"
+                          minHeight="20em"
+                          dataContainer="genresDc"
+                          columnReorderingAllowed="true">
+                    <actions>
+                        <action id="create" type="list_create"/>
+                        <action id="edit" type="list_edit"/>
+                        <action id="remove" type="list_remove"/>
+                    </actions>
+                    <columns resizable="true">
+                        <column property="name"/>
+                        <column property="popularity"/>
+                    </columns>
+                </dataGrid>
+                <hbox id="lookupActions" visible="false">
+                    <button id="selectBtn" action="selectAction"/>
+                    <button id="discardBtn" action="discardAction"/>
+                </hbox>
+            </vbox>
+            <vbox id="detailsLayout" height="100%">
+                <formLayout id="form" dataContainer="genreDc">
+                    <textField id="nameField" property="name"/>
+                    <textField id="popularityField" property="popularity"/>
+                </formLayout>
+                <hbox id="detailActions">
+                    <button id="saveBtn" text="msg:///actions.Save" icon="CHECK" enabled="false" themeNames="primary"/>
+                    <button id="cancelBtn" text="msg:///actions.Cancel" icon="BAN"/>
+                </hbox>
+            </vbox>
+        </formLayout>
+    </layout>
+</view>

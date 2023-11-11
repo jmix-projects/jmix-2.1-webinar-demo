@@ -22,12 +22,17 @@ repositories {
     maven {
         url = 'https://nexus.jmix.io/repository/public'
     }
+    maven {
+        url = 'https://nexus.jmix.io/repository/premium'
+        credentials {
+            username = rootProject['premiumRepoUser']
+            password = rootProject['premiumRepoPass']
+        }
+    }
 }
 
 dependencies {
     implementation 'net.datafaker:datafaker:2.0.2'
-
-    implementation 'io.jmix.bulkeditor:jmix-bulkeditor-starter'
 
     implementation 'io.jmix.core:jmix-core-starter'
     implementation 'io.jmix.data:jmix-eclipselink-starter'
@@ -50,6 +55,24 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     implementation 'org.postgresql:postgresql'
+
+    implementation 'io.jmix.bulkeditor:jmix-bulkeditor-starter'
+    implementation 'io.jmix.jmxconsole:jmix-jmxconsole-starter'
+    implementation 'io.jmix.bpm:jmix-bpm-flowui-starter'
+    implementation 'io.jmix.bpm:jmix-bpm-starter'
+    implementation 'io.jmix.dynattr:jmix-dynattr-starter'
+    implementation 'io.jmix.dynattr:jmix-dynattr-flowui-starter'
+    implementation 'io.jmix.maps:jmix-maps-starter'
+    implementation 'io.jmix.maps:jmix-maps-flowui-starter'
+    implementation 'io.jmix.notifications:jmix-notifications-starter'
+    implementation 'io.jmix.notifications:jmix-notifications-flowui-starter'
+    implementation 'io.jmix.search:jmix-search-flowui-starter'
+    implementation 'io.jmix.search:jmix-search-starter'
+    implementation 'io.jmix.webdav:jmix-webdav-flowui-starter'
+    implementation 'io.jmix.webdav:jmix-webdav-rest-starter'
+    implementation 'io.jmix.webdav:jmix-webdav-starter'
+    implementation 'io.jmix.quartz:jmix-quartz-starter'
+    implementation 'io.jmix.quartz:jmix-quartz-flowui-starter'
 }
 
 test {

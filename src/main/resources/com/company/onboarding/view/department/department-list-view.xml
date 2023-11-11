@@ -49,7 +49,7 @@
             </actions>
             <columns>
                 <column property="name" resizable="true">
-                    <aggregation type="COUNT"/>
+                    <aggregation type="COUNT" cellTitle="Count"/>
                 </column>
                 <column property="hrManager" resizable="true"/>
             </columns>

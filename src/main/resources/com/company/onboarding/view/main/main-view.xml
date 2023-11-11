@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<mainView xmlns="http://jmix.io/schema/flowui/main-view"
+<mainView xmlns="http://jmix.io/schema/flowui/main-view" xmlns:search="http://jmix.io/schema/search/ui" xmlns:ntf="http://jmix.io/schema/notifications/ui"
           title="msg://MainView.title">
     <actions>
         <action id="logout" type="logout"/>
@@ -12,18 +12,21 @@
                               themeNames="contrast"
                               ariaLabel="msg://drawerToggle.ariaLabel"/>
                 <h1 id="viewTitle" classNames="jmix-main-view-title"/>
+                <ntf:notificationsIndicator classNames="ms-auto me-m"/>
             </header>
         </navigationBar>
         <drawerLayout>
             <section id="section" classNames="jmix-main-view-section">
                 <h2 id="applicationTitle"
                     text="msg://applicationTitle.text"
-                    classNames="jmix-main-view-application-title"/>
+                    classNames="jmix-main-view-application-title">
+                </h2>
                 <nav id="navigation"
                      classNames="jmix-main-view-navigation"
                      ariaLabel="msg://navigation.ariaLabel">
                     <listMenu id="menu"/>
                 </nav>
+                <search:searchField classNames="ms-m me-m"/>
                 <footer id="footer" classNames="jmix-main-view-footer">
                     <userIndicator id="userIndicator"/>
                     <button id="logoutButton"

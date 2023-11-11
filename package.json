@@ -68,10 +68,13 @@
       "@vaadin/vertical-layout": "24.1.9",
       "@vaadin/virtual-list": "24.1.9",
       "ace-builds": "1.18.0",
+      "bpmn-js": "12.1.0",
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
       "lit": "2.7.6",
-      "mobile-drag-drop": "2.3.0-rc.2"
+      "mobile-drag-drop": "2.3.0-rc.2",
+      "ol": "8.1.0",
+      "proj4": "2.9.0"
     },
     "devDependencies": {
       "@rollup/plugin-replace": "5.0.2",
@@ -91,7 +94,7 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "d11e379c1114f50c5a352b8e41345f479139c2a08e9128200a26a545bc956761"
+    "hash": "3ced50b34b254b1fc4fa4c9934d32016092be536f80650013e9fb4eefa058937"
   },
   "dependencies": {
     "@polymer/polymer": "3.5.1",
@@ -172,10 +175,13 @@
     "@vaadin/vertical-layout": "24.1.9",
     "@vaadin/virtual-list": "24.1.9",
     "ace-builds": "1.18.0",
+    "bpmn-js": "12.1.0",
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "lit": "2.7.6",
-    "mobile-drag-drop": "2.3.0-rc.2"
+    "mobile-drag-drop": "2.3.0-rc.2",
+    "ol": "8.1.0",
+    "proj4": "2.9.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "5.0.2",

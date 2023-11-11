@@ -4,6 +4,8 @@ import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.Comment;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import io.jmix.dynattr.model.Categorized;
+import io.jmix.dynattr.model.Category;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -13,9 +15,13 @@ import java.util.UUID;
         Stores information about books.
         Has reference to Genre.""")
 @JmixEntity
-@Table(name = "BOOK")
+@Table(name = "BOOK", indexes = {
+        @Index(name = "IDX_BOOK_CATEGORY", columnList = "CATEGORY_ID"),
+        @Index(name = "IDX_BOOK_GENRE", columnList = "GENRE_ID")
+})
 @Entity
-public class Book {
+public class Book implements Categorized {
+
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id
@@ -24,6 +30,10 @@ public class Book {
     @Column(name = "VERSION", nullable = false)
     @Version
     private Integer version;
+
+    @JoinColumn(name = "CATEGORY_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Category category;
 
     @Comment("Book title")
     @NotNull
@@ -41,6 +51,24 @@ public class Book {
     @JoinColumn(name = "GENRE_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private Genre genre;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    @Override
+    public Category getCategory() {
+        return category;
+    }
+
+    @Override
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Genre getGenre() {
         return genre;
@@ -80,13 +108,5 @@ public class Book {
 
     public void setVersion(Integer version) {
         this.version = version;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 }

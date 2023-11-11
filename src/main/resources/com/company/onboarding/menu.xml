@@ -7,8 +7,7 @@
         <item view="Step.list" title="msg://com.company.onboarding.view.step/stepListView.title"/>
         <item view="Department.list" title="msg://com.company.onboarding.view.department/departmentListView.title"/>
         <item view="Book.list" title="msg://com.company.onboarding.view.book/bookListView.title"/>
-        <item view="SampleView" title="msg://com.company.onboarding.view.sample/sampleView.title"/>
-        <item view="FormSampleView" title="msg://com.company.onboarding.view.formsample/formSampleView.title"/>
         <item view="Genre.list" title="msg://com.company.onboarding.view.genre/genreListView.title"/>
+        <item view="SampleView" title="msg://com.company.onboarding.view.sample/sampleView.title"/>
     </menu>
 </menu-config>

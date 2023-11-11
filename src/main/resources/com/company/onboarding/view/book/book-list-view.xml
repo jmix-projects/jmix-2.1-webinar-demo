@@ -11,7 +11,8 @@
             </fetchPlan>
             <loader id="booksDl" readOnly="true">
                 <query>
-                    <![CDATA[select e from Book e]]>
+                    <![CDATA[select e from Book e
+                    order by e.author asc]]>
                 </query>
             </loader>
         </collection>
@@ -37,8 +38,9 @@
             <button id="createBtn" action="booksDataGrid.create"/>
             <button id="editBtn" action="booksDataGrid.edit"/>
             <button id="removeBtn" action="booksDataGrid.remove"/>
+            <button action="booksDataGrid.bulkEdit"/>
             <button id="generateBtn" text="Generate"/>
-            <checkbox id="testCheckbox" label="Test"/>
+            <checkbox id="testCheckbox" label="Test" alignSelf="CENTER"/>
             <simplePagination id="pagination" dataLoader="booksDl"/>
         </hbox>
         <dataGrid id="booksDataGrid" width="100%" minHeight="20em" dataContainer="booksDc"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:dynattr="http://jmix.io/schema/dynattr/flowui"
       title="msg://bookDetailView.title"
       focusComponent="form">
     <data>
@@ -13,6 +14,7 @@
     </data>
     <facets>
         <dataLoadCoordinator auto="true"/>
+        <dynattr:dynamicAttributes/>
     </facets>
     <actions>
         <action id="saveAction" type="detail_saveClose"/>
@@ -30,6 +32,7 @@
                 </actions>
             </entityPicker>
         </formLayout>
+        <dynattr:dynamicAttributesPanel dataContainer="bookDc"/>
         <hbox id="detailActions">
             <button id="saveAndCloseBtn" action="saveAction"/>
             <button id="closeBtn" action="closeAction"/>

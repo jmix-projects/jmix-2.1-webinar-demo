@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<view xmlns="http://jmix.io/schema/flowui/view"
+<view xmlns="http://jmix.io/schema/flowui/view" xmlns:dynattr="http://jmix.io/schema/dynattr/flowui"
       xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
       title="msg://bookListView.title"
       focusComponent="booksDataGrid">
@@ -24,6 +24,7 @@
             <genericFilter component="genericFilter"/>
             <pagination component="pagination"/>
         </urlQueryParameters>
+        <dynattr:dynamicAttributes/>
     </facets>
     <actions>
         <action id="selectAction" type="lookup_select"/>

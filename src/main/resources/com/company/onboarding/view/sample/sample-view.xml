@@ -11,14 +11,8 @@
     </facets>
     <layout>
         <tabSheet id="tabSheet" width="100%" height="100%">
-            <tab id="htmlTab" label="HTML">
-                <html content="msg://helloWorld"/>
-            </tab>
-            <tab id="timerTab" label="Timer">
-                <span id="timerOutput"/>
-            </tab>
             <tab id="mapTab" label="Map">
-                <maps:geoMap width="100%" height="100%" id="map">
+                <maps:geoMap id="map" width="100%" height="100%">
                     <maps:layers>
                         <maps:tile>
                             <maps:osmSource/>
@@ -28,6 +22,12 @@
                         </maps:vector>
                     </maps:layers>
                 </maps:geoMap>
+            </tab>
+            <tab id="htmlTab" label="HTML">
+                <html content="msg://helloWorld"/>
+            </tab>
+            <tab id="timerTab" label="Timer">
+                <span id="timerOutput"/>
             </tab>
             <tab id="formTab" label="Form">
                 <vbox>

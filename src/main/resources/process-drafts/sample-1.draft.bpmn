@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:jmix="http://jmix.io/schema/bpm/bpmn" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.flowable.org/processdef" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:jmix="http://jmix.io/schema/bpm/bpmn" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.flowable.org/processdef" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
   <process id="sample-1" name="Sample 1" isExecutable="true">
     <startEvent id="startEvent1">
       <extensionElements>
@@ -13,62 +13,27 @@
           <jmix:processVariable name="title" type="string" />
         </jmix:processVariables>
       </extensionElements>
-      <outgoing>Flow_0vhs7z4</outgoing>
-      <outgoing>Flow_1sheccp</outgoing>
+      <outgoing>Flow_1o5653j</outgoing>
     </startEvent>
-    <sequenceFlow id="Flow_0vhs7z4" sourceRef="startEvent1" targetRef="Activity_0ew0sae" />
-    <serviceTask id="Activity_0ew0sae" flowable:type="jmix-create-entity">
-      <extensionElements>
-        <flowable:field name="entityName">
-          <flowable:string>Book</flowable:string>
-        </flowable:field>
-        <flowable:field name="resultVariable">
-          <flowable:string>book</flowable:string>
-        </flowable:field>
-        <flowable:field name="entityAttributes">
-          <flowable:string>[]</flowable:string>
-        </flowable:field>
-      </extensionElements>
-      <incoming>Flow_0vhs7z4</incoming>
-      <incoming>Flow_1sheccp</incoming>
-      <outgoing>Flow_0rcu22w</outgoing>
-    </serviceTask>
-    <sequenceFlow id="Flow_1sheccp" sourceRef="startEvent1" targetRef="Activity_0ew0sae" />
-    <sequenceFlow id="Flow_0rcu22w" sourceRef="Activity_0ew0sae" targetRef="Activity_0itu488" />
     <userTask id="Activity_0itu488">
       <extensionElements>
-        <jmix:formData type="jmix-screen" openMode="DIALOG" screenId="BpmProcessForm">
-          <jmix:formOutcomes>
-            <jmix:formOutcome id="submit" />
-            <jmix:formOutcome id="reject" />
-          </jmix:formOutcomes>
-        </jmix:formData>
+        <jmix:formData type="jmix-screen" openMode="DIALOG" />
       </extensionElements>
-      <incoming>Flow_0rcu22w</incoming>
+      <incoming>Flow_1o5653j</incoming>
     </userTask>
+    <sequenceFlow id="Flow_1o5653j" sourceRef="startEvent1" targetRef="Activity_0itu488" />
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_process">
     <bpmndi:BPMNPlane id="BPMNPlane_process" bpmnElement="sample-1">
       <bpmndi:BPMNShape id="BPMNShape_startEvent1" bpmnElement="startEvent1">
         <omgdc:Bounds x="150" y="150" width="30" height="30" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0mk9vvu_di" bpmnElement="Activity_0ew0sae">
-        <omgdc:Bounds x="230" y="125" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1id7vat_di" bpmnElement="Activity_0itu488">
-        <omgdc:Bounds x="380" y="125" width="100" height="80" />
+        <omgdc:Bounds x="280" y="125" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_0vhs7z4_di" bpmnElement="Flow_0vhs7z4">
+      <bpmndi:BPMNEdge id="Flow_1o5653j_di" bpmnElement="Flow_1o5653j">
         <omgdi:waypoint x="180" y="165" />
-        <omgdi:waypoint x="230" y="165" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1sheccp_di" bpmnElement="Flow_1sheccp">
-        <omgdi:waypoint x="180" y="165" />
-        <omgdi:waypoint x="230" y="165" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0rcu22w_di" bpmnElement="Flow_0rcu22w">
-        <omgdi:waypoint x="330" y="165" />
-        <omgdi:waypoint x="380" y="165" />
+        <omgdi:waypoint x="280" y="165" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

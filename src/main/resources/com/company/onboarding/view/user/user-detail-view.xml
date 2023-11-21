@@ -14,14 +14,14 @@
             <loader/>
             <collection id="stepsDc" property="steps"/>
         </instance>
-        <collection class="com.company.onboarding.entity.Department" id="departmentsDc">
-            <fetchPlan extends="_base"/>
-            <loader id="departmentsDl" readOnly="true">
-                <query>
-                    <![CDATA[select e from Department e order by e.name]]>
-                </query>
-            </loader>
-        </collection>
+<!--        <collection class="com.company.onboarding.entity.Department" id="departmentsDc">-->
+<!--            <fetchPlan extends="_base"/>-->
+<!--            <loader id="departmentsDl" readOnly="true">-->
+<!--                <query>-->
+<!--                    <![CDATA[select e from Department e order by e.name]]>-->
+<!--                </query>-->
+<!--            </loader>-->
+<!--        </collection>-->
     </data>
     <actions>
         <action id="saveAction" type="detail_saveClose"/>

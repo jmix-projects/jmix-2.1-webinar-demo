@@ -1,20 +1,21 @@
 package com.company.onboarding.view.user;
 
-import com.company.onboarding.entity.*;
+import com.company.onboarding.entity.OnboardingStatus;
+import com.company.onboarding.entity.Step;
+import com.company.onboarding.entity.User;
+import com.company.onboarding.entity.UserStep;
 import com.company.onboarding.view.main.MainView;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.textfield.PasswordField;
-import com.vaadin.flow.data.provider.Query;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.renderer.Renderer;
 import com.vaadin.flow.data.renderer.TextRenderer;
 import com.vaadin.flow.router.Route;
 import io.jmix.core.DataManager;
 import io.jmix.core.EntityStates;
-import io.jmix.core.querycondition.PropertyCondition;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.textfield.TypedTextField;
@@ -23,17 +24,13 @@ import io.jmix.flowui.model.CollectionPropertyContainer;
 import io.jmix.flowui.model.DataContext;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowui.view.*;
-import io.jmix.flowuidata.serialization.io.jmix.uidata.serialization.FilterConditionAttributeSerializationExtension;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.TimeZone;
-import java.util.stream.Stream;
 
 @Route(value = "users/:id", layout = MainView.class)
 @ViewController("User.detail")
@@ -71,10 +68,6 @@ public class UserDetailView extends StandardDetailView<User> {
 //    private DataGrid<UserStep> stepsDataGrid;
     @Autowired
     private UiComponents uiComponents;
-    @Autowired
-    private FilterConditionAttributeSerializationExtension filterConditionAttributeSerializationExtension;
-    @ViewComponent
-    private CollectionContainer<Department> departmentsDc;
 
     @Subscribe
     public void onInit(final InitEvent event) {

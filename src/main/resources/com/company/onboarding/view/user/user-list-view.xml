@@ -65,10 +65,10 @@
                 <column property="lastName" filterable="true" autoWidth="true" resizable="false"/>
                 <column property="email" filterable="true" autoWidth="true" resizable="false"/>
                 <column property="timeZoneId" autoWidth="true"/>
-                <column property="active" filterable="true" autoWidth="true"/>
-                <column property="onboardingStatus" filterable="true" autoWidth="true"/>
-                <column property="department" filterable="true" autoWidth="true"/>
-                <column property="joiningDate" filterable="true" autoWidth="true"/>
+                <column property="active" filterable="true" autoWidth="true" resizable="false"/>
+                <column property="onboardingStatus" filterable="true" autoWidth="true" resizable="false"/>
+                <column property="department" filterable="true" autoWidth="true" resizable="false"/>
+                <column property="joiningDate" filterable="true" autoWidth="true" resizable="false"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

@@ -13,6 +13,7 @@ public class BookDetailView extends StandardDetailView<Book> {
 
     @Subscribe
     public void onInit(InitEvent event) {
+
     }
 
 }

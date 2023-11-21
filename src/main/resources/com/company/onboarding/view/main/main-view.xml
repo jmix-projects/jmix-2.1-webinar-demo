@@ -17,10 +17,12 @@
         </navigationBar>
         <drawerLayout>
             <section id="section" classNames="jmix-main-view-section">
-                <h2 id="applicationTitle"
-                    text="msg://applicationTitle.text"
-                    classNames="jmix-main-view-application-title">
-                </h2>
+                <anchor href="/" css="text-decoration: none;">
+                    <h2 id="applicationTitle"
+                        text="msg://applicationTitle.text"
+                        classNames="jmix-main-view-application-title">
+                    </h2>
+                </anchor>
                 <nav id="navigation"
                      classNames="jmix-main-view-navigation"
                      ariaLabel="msg://navigation.ariaLabel">

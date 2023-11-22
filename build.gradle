@@ -20,10 +20,10 @@ version = '0.0.1-SNAPSHOT'
 repositories {
     mavenCentral()
     maven {
-        url = 'https://nexus.jmix.io/repository/public'
+        url = 'https://global.repo.jmix.io/repository/public'
     }
     maven {
-        url = 'https://nexus.jmix.io/repository/premium'
+        url = 'https://global.repo.jmix.io/repository/premium'
         credentials {
             username = rootProject['premiumRepoUser']
             password = rootProject['premiumRepoPass']
